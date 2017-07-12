@@ -1,0 +1,21 @@
+{
+  "name": "crazy-dong-plugin-idata-scan",
+  "version": "1.0.0",
+  "description": "scan_qr",
+  "cordova": {
+	"id":"org.cordova.IDataScanPlugin",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "liujingdong",
+  "license": "ISC"
+}

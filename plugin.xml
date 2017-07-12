@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin id="org.cordova.IDataScanPlugin" version="0.0.1"
+        xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>IDataScanPlugin</name>
+    <description>工厂机iData扫描</description>
+
+    <js-module name="IDataScanPlugin" src="www/IDataScanPlugin.js">
+        <clobbers target="IDataScanPlugin"/>
+    </js-module>
+
+
+    <platform name="android">
+        <config-file parent="/*" target="res/xml/config.xml">
+            <feature name="IDataScanPlugin">
+                <param name="android-package" value="iData.scan.IDataScanPlugin" />
+				<param name="onload" value="true" />
+            </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="application">
+            <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale"
+                      android:name="org.apache.cordova.scan.IDataScanActivity"
+                      android:screenOrientation="fullUser"
+                      android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" />
+        </config-file>
+
+        <source-file src="src/android/IDataScanPlugin.java" target-dir="src/org/apache/cordova/scan"/>
+        <source-file src="src/android/ScannerInterface.java" target-dir="src/org/apache/cordova/scan"/>
+        <source-file src="src/android/IDataScanActivity.java" target-dir="src/org/apache/cordova/scan"/>
+        <resource-file src="src/android/res/layout/idatascan.xml" target="res/layout/idatascan.xml" />
+    </platform>
+</plugin>
