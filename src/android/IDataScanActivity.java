@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.chinaZhongWang.community.R;
+
 /**
  * Created by CrazyDong on 2017/7/10.
  */
@@ -23,7 +25,7 @@ public class IDataScanActivity extends Activity{
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-	setContentView(R.layout.idatascan);
+    setContentView(R.layout.idatascan);
     initScanner();
 
     super.onCreate(savedInstanceState);
