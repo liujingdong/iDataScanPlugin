@@ -5,11 +5,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
-import com.chinaZhongWang.community.R;
+//import com.chinaZhongWang.community.R;
 
 /**
  * Created by CrazyDong on 2017/7/10.
@@ -22,14 +23,27 @@ public class IDataScanActivity extends Activity{
   private boolean isContinue = false;	//连续扫描的标志
   private static final String RES_ACTION = "android.intent.action.SCANRESULT";
   private String scanResult;//扫描后的结果
+  private String package_name;
+  private Resources resources;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    setContentView(R.layout.idatascan);
+//    setContentView(R.layout.idatascan);
+    setContentView(getResourceId("layout/idatascan"));
     initScanner();
 
     super.onCreate(savedInstanceState);
   }
+
+  private int getResourceId (String typeAndName)
+  {
+    if(package_name == null) package_name = getApplication().getPackageName();
+    if(resources == null) resources = getApplication().getResources();
+    return resources.getIdentifier(typeAndName, null, package_name);
+  }
+
+
+
 
   /*初始化*/
   private void initScanner(){
