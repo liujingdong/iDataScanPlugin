@@ -23,6 +23,7 @@ public class IDataScanActivity extends Activity{
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
+	setContentView(R.layout.idatascan);
     initScanner();
 
     super.onCreate(savedInstanceState);
